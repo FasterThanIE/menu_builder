@@ -2,9 +2,6 @@
 
 require_once "vendor/autoload.php";
 
-$menu = new \App\Builders\MenuBuilder();
+$controller = new \App\Controllers\MainController();
 
-$menu->addFood(\App\Factories\FoodFactory::CATEGORY_PASTA, "Ala Test", 20.5, true);
-
-
-var_dump($menu->getFoods());
+$controller->run();
