@@ -32,6 +32,7 @@ class FoodFactory
                 throw new Exception("Invalid category $category");
             }
         } catch (Exception $e) {
+            die($e);
         }
 
 
