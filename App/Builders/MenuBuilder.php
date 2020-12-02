@@ -2,7 +2,7 @@
 
 namespace App\Builders;
 
-use App\Entities\FoodEntity;
+use App\Factories\FoodFactory;
 
 class MenuBuilder
 {
@@ -47,13 +47,14 @@ class MenuBuilder
     }
 
     /**
+     * @param string $category
      * @param string $name
      * @param float $price
      * @param bool $special
      */
-    public function addFood(string $name, float $price, bool $special = false): void
+    public function addFood(string $category, string $name, float $price, bool $special = false): void
     {
-        $this->foods[] = new FoodEntity($name, $price, $special);
+        $this->foods[] = FoodFactory::generate($category, $name, $price, $special);
     }
 
 

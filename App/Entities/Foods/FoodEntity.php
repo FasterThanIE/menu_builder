@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Entities;
+namespace App\Entities\Foods;
 
-class FoodEntity extends MenuItem
+use App\Entities\MenuItem;
+
+abstract class FoodEntity extends MenuItem
 {
 
-    /**
-     * @var bool
-     */
     private bool $special;
 
     /**
@@ -16,7 +15,7 @@ class FoodEntity extends MenuItem
      * @param float $price
      * @param bool $special
      */
-    public function __construct(string $name, float $price, bool $special)
+    public function __construct(string $name, float $price, bool $special = false)
     {
         parent::__construct($name, $price);
         $this->setSpecial($special);
